@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yerim</title>
     <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
     <!-- fontawsome -->
     <script src="https://kit.fontawesome.com/44357f99e0.js" crossorigin="anonymous"></script>
   </head>
@@ -15,8 +16,9 @@
         <span class="main_background_diamond"
           ><img src="./img/bg.png" alt="diamond" />
         </span>
-        <span class="main_logo"><img src="./img/yerim.png" alt="Logo" /></span>
-        <p class="main_text_bottom">touch me</p>
+        <span class="main_logo"><img src="./img/yerim.png" alt="Logo" />
+        </span>
+        <p id="main_text_bottom">touch me</p>
       </article>
       <!-- slide -->
       <article class="slide">
@@ -40,16 +42,18 @@
       </article>
       <!-- navigation -->
       <header id="navigation_heading">
-        <nav id="navigation">
-            <!-- <span class="nav_logo">
-            <img src="./img/yerim.png" alt="logo" />
-            </span> -->
-            <ul class="nav_gnb">
-              <li><a href="">PROFILE</a></li>
-              <li><a href="">SKILLS</a></li>
-              <li><a href="">CONTACT</a></li>
-            </ul>
-        </nav>
+        <article id="heading">
+          <nav id="navigation">
+              <!-- <span class="nav_logo">
+              <img src="./img/yerim.png" alt="logo" />
+              </span> -->
+              <ul class="nav_gnb">
+                <li><a href="">PROFILE</a></li>
+                <li><a href="">SKILLS</a></li>
+                <li><a href="">CONTACT</a></li>
+              </ul>
+          </nav>
+        </article>
       </header>
       <!-- profile -->
       <article id="profile">
@@ -65,38 +69,34 @@
             <li>yerixxz@gmail.com</li>
             <li>Bucheon, Gyeonggi-do
               </li>
+              
             <span class="profile_list_icon">
-              <i class="fab fa-instagram"></i>
-              <i class="fab fa-github"></i>
+             <a href="https://www.instagram.com/yerixxp?igsh=dHU2dTYwaXlrMHJo&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+             <a href="https://github.com/yerixx"target="_blank">
+               <i class="fab fa-github"></i>
+             </a>
             </span>
           </ul>
         </span>
         <span id="profile_image">
           <img src="./img/profile.png" alt="profile">
         </span>
-      </article>
-      <!-- skills -->
-      <article id="skills">
-        <span id="skills_icon">
+           <!-- skills -->
+           <div id="skills_icon">
             <span id="skills_list_icon">
               <i class="fab fa-html5"></i>
               <i class="fab fa-css3-alt"></i>
               <i class="fab fa-js-square"></i>
               <i class="fab fa-github"></i>
               <i class="fab fa-figma"></i>
-              <span class="skills_icon_ai">
+              <span class="skills_icon_aips">
               <img src="./img/ai.png" alt="ai">
-              </span>
-              <span class="skills_icon_ps">
               <img src="./img/ps.png" alt="ps">
               </span>
             </span>
-        </span>
-        <span id="profile_image">
-          <img src="./img/profile.png" alt="profile">
-        </span>
-    </article>
-    <!-- coontent  -->
+          </div>
+      </article>
+         <!-- coontent  -->
     <!-- <article id="content">
       <span class="content_text">
         <p> <b>SPACE DESIGNER</b>에서<br/> <b>FRONTEND DEVELOPER</b>가 되기 위해 <mark>새로운 도전</mark>을 하고있습니다.<br/>
@@ -109,15 +109,21 @@
         i like it
       </span>
       <span class="favorite_btn">
-        <button>swinning</button>
-        <button>Hiking</button>
-        <button>Climbing</button>
-        <button>Casual</button>
-        <button>Y2K</button>
-        <button>Uniq</button>
-        <button>Lo-Fi</button>
-        <button>House</button>
-        <button>R&B</button>
+        <span class="favorite_btn_blue">
+          <button>swinning</button>
+          <button>Hiking</button>
+          <button>Climbing</button>
+        </span>
+        <span class="favorite_btn_red">
+          <button>Casual</button>
+          <button>Y2K</button>
+          <button>Uniq</button>
+        </span>
+        <span class="favorite_btn_yellow">
+          <button>Lo-Fi</button>
+          <button>House</button>
+          <button>R&B</button>
+        </span>
       </span>
       <span id="favorite_diamond">
         <img src="./img/footer_logo.png" alt="diamond">
@@ -139,7 +145,7 @@
         </section>
         <section class="contact_inner message">
           <label for="message">message</label>
-          <input type="text" name="message" id="message">
+          <textarea name="message" id="message"></textarea>
         </section>
         <section id="contact_btn">
           <input type="submit" value="i'm ready">
@@ -152,7 +158,9 @@
         <img src="./img/thank.png" alt="thankyou">
         </span>
         <span id="footer_diamond">
-          <img src="./img/footer_logo.png" alt="diamond">
+          <a href="#">
+            <img src="./img/footer_logo.png" alt="diamond">
+          </a>
         </span>
         <span id="footer_text">
           © yerim. All rights reserved.
