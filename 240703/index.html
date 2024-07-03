@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yerim</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+    <!-- fontawsome -->
+    <script
+      src="https://kit.fontawesome.com/44357f99e0.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main id="appContainer">
+      <!-- main -->
+      <!-- <article class="main">
+        <span class="main_background_diamond"
+          ><img src="./img/bg.png" alt="diamond" />
+        </span>
+        <span class="main_logo"><img src="./img/yerim.png" alt="Logo" /></span>
+        <p id="main_text_bottom">touch me</p>
+      </article> -->
+      <!-- slide -->
+      <article class="slide">
+        <span class="slide_logo"
+          ><img src="./img/yerim.png" alt="Logo" />
+        </span>
+        <span class="slide_text_box">
+          <span class="slide_text_typing"></span>
+          <span class="slide_text_blink">|</span>
+        </span>
+        <span class="slide_scroll_bar"
+          ><img src="./img/scroll bar.png" alt=""
+        /></span>
+        <span class="slide_text">
+          <span class="slide_text_bottom_left">
+            © YERIM. ALL RIGHTS RESERVED.
+          </span>
+          <span class="slide_text_bottom_center"> SCROLL </span>
+          <span class="slide_text_bottom_right"> 1998 </span>
+        </span>
+      </article>
+      <!-- navigation -->
+      <header id="navigation_heading">
+        <article id="heading">
+          <nav id="navigation">
+            <ul class="nav_gnb">
+              <li><a href="#profile">PROFILE</a></li>
+              <li><a href="#skills_icon">SKILLS</a></li>
+              <li><a href="#contact">CONTACT</a></li>
+            </ul>
+          </nav>
+        </article>
+      </header>
+      <!-- profile -->
+      <article id="profile">
+        <span class="profile_text">
+          <span class="profile_name">
+            <h2>PARK YERIM</h2>
+            <p>박예림</p>
+          </span>
+          <ul class="profile_inner_text">
+            <li>1998.01.23</li>
+            <li>ESFJ</li>
+            <li>010.5508.1689</li>
+            <li>yerixxz@gmail.com</li>
+            <li>Bucheon, Gyeonggi-do</li>
+
+            <span class="profile_list_icon">
+              <a
+                href="https://www.instagram.com/yerixxp?igsh=dHU2dTYwaXlrMHJo&utm_source=qr"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://github.com/yerixx" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </span>
+          </ul>
+        </span>
+        <span id="profile_image">
+          <img src="./img/profile.png" alt="profile" />
+        </span>
+        <!-- skills -->
+        <div id="skills_icon">
+          <span id="skills_list_icon">
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-js-square"></i>
+            <i class="fab fa-github"></i>
+            <i class="fab fa-figma"></i>
+            <span class="skills_icon_aips">
+              <img src="./img/ai.png" alt="ai" />
+              <img src="./img/ps.png" alt="ps" />
+            </span>
+          </span>
+        </div>
+      </article>
+      <!-- coontent  -->
+      <article id="content">
+        <span class="content_text">
+          <p>
+            <b>SPACE DESIGNER</b>에서<br />
+            <b>FRONTEND DEVELOPER</b>가 되기 위해 <mark>새로운 도전</mark>을
+            하고있습니다.<br />
+            <b> <b id="content_text_red">MAKE THE BEST </b>OF THE SITUATION</b
+            >의 가치관을 추구합니다.
+          </p>
+        </span>
+      </article>
+      <!-- Favorite-->
+      <article id="favorite">
+        <span class="favorite_title"> i like it </span>
+        <span class="favorite_btn">
+          <span class="favorite_btn_blue">
+            <button data-link="swinning"></button>
+            <button data-link="Hiking"></button>
+            <button data-link="Climbing"></button>
+          </span>
+          <span class="favorite_btn_red">
+            <button data-link="Casual"></button>
+            <button data-link="Y2K"></button>
+            <button data-link="Uniq"></button>
+          </span>
+          <span class="favorite_btn_yellow">
+            <button data-link="Lo-Fi"></button>
+            <button data-link="House"></button>
+            <button data-link="R&B"></button>
+          </span>
+        </span>
+        <span id="favorite_diamond">
+          <img src="./img/footer_logo.png" alt="diamond" />
+        </span>
+      </article>
+      <!-- contact -->
+      <article id="contact">
+        <span id="contact_title">
+          <h2>CONTACT</h2>
+        </span>
+        <form action="https://localhost:3000" method="get">
+          <section class="contact_inner">
+            <label for="name">name</label>
+            <input type="text" name="name" id="name" />
+          </section>
+          <section class="contact_inner">
+            <label for="title">title</label>
+            <input type="text" name="title" id="title" />
+          </section>
+          <section class="contact_inner message">
+            <label for="message">message</label>
+            <textarea name="message" id="message"></textarea>
+          </section>
+          <section id="contact_btn">
+            <input type="submit" value="i'm ready" />
+          </section>
+        </form>
+      </article>
+      <!-- footer -->
+      <footer id="footer">
+        <span id="footer_logo">
+          <img src="./img/thank.png" alt="thankyou" />
+        </span>
+        <span id="footer_diamond">
+          <a href="#">
+            <img src="./img/footer_logo.png" alt="diamond" />
+          </a>
+        </span>
+        <span id="footer_text"> © yerim. All rights reserved. </span>
+      </footer>
+    </main>
+  </body>
+</html>
