@@ -29,11 +29,13 @@
         </span>
         <span class="slide_text_box">
           <span class="slide_text_typing"></span>
-          <span class="slide_text_blink">|</span>
+          <span class="slide_text_blink"></span>
         </span>
-        <span class="slide_scroll_bar"
-          ><img src="./img/scroll bar.png" alt=""
-        /></span>
+        <span class="slide_scroll_bar">
+          <!-- <img src="./img/scroll bar.png" alt="" /> -->
+          <span id="scroll_bar"></span>
+          <span id="scroll_wheel"></span>
+        </span>
         <span class="slide_text">
           <span class="slide_text_bottom_left">
             © YERIM. ALL RIGHTS RESERVED.
@@ -49,6 +51,7 @@
             <ul class="nav_gnb">
               <li><a href="#profile">PROFILE</a></li>
               <li><a href="#skills_icon">SKILLS</a></li>
+              <li><a href="#favorite">LIKE</a></li>
               <li><a href="#contact">CONTACT</a></li>
             </ul>
           </nav>
@@ -111,13 +114,20 @@
         </span>
       </article>
       <!-- Favorite-->
-      <article id="favorite">
+      <section id="favorite">
         <span class="favorite_title"> i like it </span>
         <span class="favorite_btn">
           <span class="favorite_btn_blue">
-            <button data-link="swinning"></button>
-            <button data-link="Hiking"></button>
+            <button class="first_btn" data-link="Hiking"></button>
+            <!-- modal-->
+            <article class="favorite_modal">
+              <h2>🏔️</h2>
+              <p>Hiking</p>
+              <span class="modal_img"></span>
+            </article>
+
             <button data-link="Climbing"></button>
+            <button data-link="swimming"></button>
           </span>
           <span class="favorite_btn_red">
             <button data-link="Casual"></button>
@@ -133,7 +143,8 @@
         <span id="favorite_diamond">
           <img src="./img/footer_logo.png" alt="diamond" />
         </span>
-      </article>
+      </section>
+
       <!-- contact -->
       <article id="contact">
         <span id="contact_title">

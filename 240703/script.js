@@ -29,3 +29,15 @@ const typing = () => {
 // 0.25초에 한번씩 typimg 함수가 실행하게 해줘
 // setInterval(typing, 250);
 typingInterval = setInterval(typing, 100);
+
+// 버튼 불러오기
+const btn = document.querySelector(".first_btn");
+console.log(btn);
+const modalBox = document.querySelector(".favorite_modal");
+console.log(modalBox);
+btn.addEventListener("click", () => {
+  modalBox.classList.add("active");
+});
+modalBox.addEventListener("click", function () {
+  this.classList.remove("active");
+});

@@ -18,7 +18,7 @@
 /* main */
 .main {
   position: relative;
-  height: var(--main-height);
+  height: 100vh;
   cursor: url("./img/mouseck.svg") 16 0, auto;
 }
 
@@ -27,7 +27,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: var(--main-height);
+  height: 100vh;
   margin: 0 auto;
   background-color: black;
 }
@@ -122,6 +122,34 @@
   position: absolute;
   left: 50%;
   bottom: 130px;
+
+  #scroll_bar {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 2px;
+    height: 120px;
+    background: #000;
+  }
+  #scroll_wheel {
+    position: absolute;
+    top: -100px;
+    left: -1px;
+    width: 4px;
+    height: 100px;
+    background: #000;
+    transition: all 0.3s;
+    animation: anin 3s linear infinite;
+
+    /* AIN 종료되면 다시 시작 */
+    animation-fill-mode: both;
+    animation-delay: 4s;
+  }
+}
+@keyframes anin {
+  0% {
+    height: 0;
+  }
 }
 
 #slide_text {
@@ -194,6 +222,7 @@
   gap: 60px;
   a {
     padding: 4px 14px;
+    transition: all 0.3s;
     &:hover {
       color: #fff;
       background-color: #000;
@@ -358,19 +387,20 @@
   gap: 10px;
   padding-bottom: 70px;
   button {
+    display: inline-block;
     position: relative;
     width: 220px;
     height: 70px;
     margin: 20px 40px;
     color: #fff;
     background-color: #000;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.7);
     border-radius: 50px;
-    padding-left: 50px;
-    line-height: 300%;
+    line-height: 70px;
     font-size: 20px;
-    text-align: center;
     text-transform: uppercase;
     overflow: hidden;
+    cursor: pointer;
     &::before,
     &::after {
       content: attr(data-link);
@@ -381,21 +411,64 @@
     /* 전 선택자는 그대로 */
     &::before {
       top: 0;
-      left: 0;
+      left: 50%;
+      transform: translatex(-50%);
     }
     /* 후 선택자는 100%만큼 내려갔다가*/
     &::after {
       top: 100%;
-      left: 0;
+      left: 50%;
+      transform: translatex(-50%);
       color: #000;
     }
     /* 마우스 오버하면 100%올라가기*/
     &:hover::before {
       top: -100%;
+      left: 50%;
+      transform: translatex(-50%);
     }
     /* 마우스 오버하면 원래위치로 올라가기*/
     &:hover::after {
       top: 0;
+      left: 50%;
+      transform: translatex(-50%);
+    }
+  }
+}
+/* modal */
+.favorite_btn_blue:nth-child(1) {
+  .favorite_modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: all 0.3s;
+    p {
+      width: 1000px;
+      text-align: center;
+      font-family: "Anton", sans-serif;
+      font-size: 350px;
+      letter-spacing: 10px;
+      text-shadow: 0 0 14px var(--baground-color-blue);
+      color: #0e9aff;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    .modal_img {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 1200px;
+      height: 700px;
+      border-radius: 40px;
+      background: url(./img/hiking.jpeg) center/cover no-repeat;
+      box-shadow: 0 0 20px var(--baground-color-blue);
+      z-index: 0;
+    }
+    &.active {
+      display: flex;
     }
   }
 }
@@ -417,11 +490,9 @@
 #favorite_diamond {
   position: absolute;
   top: 35%;
-  left: 50%;
-  transform: translateX(-50%);
-  &:hover img {
-    animation: ani 1.5s linear infinite;
-  }
+  left: 48.5%;
+  animation: ani 3s linear infinite;
+  animation-fill-mode: both;
 }
 @keyframes ani {
   0% {
@@ -517,12 +588,11 @@
 
 #footer_diamond {
   position: absolute;
-  left: 50%;
+  left: 48.5%;
   bottom: 180px;
-  transform: translateX(-50%);
-  &:hover img {
-    animation: ani 1.5s linear infinite;
-  }
+  animation: ani 3s linear infinite;
+  animation-fill-mode: both;
+  cursor: pointer;
 }
 @keyframes ani {
   0% {
