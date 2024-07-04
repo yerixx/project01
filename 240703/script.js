@@ -31,13 +31,66 @@ const typing = () => {
 typingInterval = setInterval(typing, 100);
 
 // 버튼 불러오기
-const btn = document.querySelector(".first_btn");
-console.log(btn);
-const modalBox = document.querySelector(".favorite_modal");
-console.log(modalBox);
-btn.addEventListener("click", () => {
-  modalBox.classList.add("active");
+const hikingBtn = document.querySelector(".hiking_btn");
+const hikingModalBox = document.querySelector(".hiking_modal");
+
+hikingBtn.addEventListener("click", () => {
+  hikingModalBox.classList.add("active");
 });
-modalBox.addEventListener("click", function () {
+hikingModalBox.addEventListener("click", function () {
+  this.classList.remove("active");
+});
+
+const climbingBtn = document.querySelector(".climbing_btn");
+const climbingModalBox = document.querySelector(".climbing_modal");
+
+climbingBtn.addEventListener("click", () => {
+  climbingModalBox.classList.add("active");
+});
+climbingModalBox.addEventListener("click", function () {
+  this.classList.remove("active");
+});
+
+const swimmingBtn = document.querySelector(".swimming_btn");
+const swimmingModalBox = document.querySelector(".swimming_modal");
+
+swimmingBtn.addEventListener("click", () => {
+  swimmingModalBox.classList.add("active");
+});
+swimmingModalBox.addEventListener("click", function () {
+  this.classList.remove("active");
+});
+
+//
+const lofiBtn = document.querySelector(".lofi_btn");
+console.log(lofiBtn);
+const lofiModalBox = document.querySelector(".lofi_modal");
+console.log(lofiModalBox);
+lofiBtn.addEventListener("click", () => {
+  lofiModalBox.classList.add("active");
+});
+lofiModalBox.addEventListener("click", function () {
+  this.classList.remove("active");
+});
+
+const houseBtn = document.querySelector(".house_btn");
+console.log(houseBtn);
+const houseModalBox = document.querySelector(".house_modal");
+console.log(houseModalBox);
+houseBtn.addEventListener("click", () => {
+  houseModalBox.classList.add("active");
+});
+houseModalBox.addEventListener("click", function () {
+  this.classList.remove("active");
+});
+
+const bandBtn = document.querySelector(".band_btn");
+console.log(bandBtn);
+const bandModalBox = document.querySelector(".band_modal");
+console.log(bandModalBox);
+bandBtn.addEventListener("click", () => {
+  bandModalBox.classList.add("active");
+});
+bandModalBox.addEventListener("click", function () {
   this.classList.remove("active");
 });

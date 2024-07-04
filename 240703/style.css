@@ -134,12 +134,12 @@
   #scroll_wheel {
     position: absolute;
     top: -100px;
-    left: -1px;
-    width: 4px;
+    left: -2px;
+    width: 6px;
     height: 100px;
     background: #000;
     transition: all 0.3s;
-    animation: anin 3s linear infinite;
+    animation: anin 2s linear infinite;
 
     /* AIN 종료되면 다시 시작 */
     animation-fill-mode: both;
@@ -201,7 +201,7 @@
   width: 100%;
   height: 70px;
   background-color: #fff;
-  z-index: 1;
+  z-index: 3;
 }
 #navigation {
   display: flex;
@@ -375,9 +375,21 @@
 }
 
 .favorite_title {
-  margin-top: 20px;
-  font-size: 110px;
+  margin-top: 150px;
+  font-size: 120px;
   font-weight: bold;
+}
+#favorite_diamond {
+  position: absolute;
+  top: 40%;
+  left: 48.5%;
+  animation: ani 3s linear infinite;
+  animation-fill-mode: both;
+}
+@keyframes ani {
+  0% {
+    transform: rotateY(365deg);
+  }
 }
 .favorite_btn {
   display: flex;
@@ -385,17 +397,18 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding-bottom: 70px;
+  padding-bottom: 220px;
   button {
     display: inline-block;
     position: relative;
-    width: 220px;
+    width: 200px;
     height: 70px;
-    margin: 20px 40px;
+    margin: 18px;
     color: #fff;
     background-color: #000;
-    box-shadow: 0 0 9px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
     border-radius: 50px;
+    border: none;
     line-height: 70px;
     font-size: 20px;
     text-transform: uppercase;
@@ -437,7 +450,54 @@
 }
 /* modal */
 .favorite_btn_blue:nth-child(1) {
-  .favorite_modal {
+  .hiking_modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    z-index: 2;
+    transition: all 0.3s;
+    h2 {
+      width: 1000px;
+      text-align: center;
+      font-family: "Anton", sans-serif;
+      font-size: 300px;
+      letter-spacing: 10px;
+      text-shadow: 0 0 10px var(--baground-color-blue);
+      color: tomato;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    p {
+      width: 1000px;
+      text-align: center;
+      font-size: 22px;
+      color: #000;
+      text-shadow: 0 0 10px #fff;
+      position: absolute;
+      transform: translate(-50%, 200px);
+      z-index: 1;
+    }
+    .hiking_img {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 1000px;
+      height: 600px;
+      border-radius: 40px;
+      background: url(./img/hiking.jpeg) center/cover no-repeat;
+      box-shadow: 0 0 20px var(--baground-color-blue);
+      z-index: 0;
+    }
+    &.active {
+      display: flex;
+    }
+  }
+}
+.favorite_btn_blue:nth-child(1) {
+  .climbing_modal {
     display: none;
     position: absolute;
     top: 50%;
@@ -445,26 +505,189 @@
     transform: translate(-50%, -50%);
     z-index: 2;
     transition: all 0.3s;
-    p {
+    h2 {
       width: 1000px;
       text-align: center;
       font-family: "Anton", sans-serif;
-      font-size: 350px;
+      font-size: 230px;
       letter-spacing: 10px;
-      text-shadow: 0 0 14px var(--baground-color-blue);
-      color: #0e9aff;
+      text-shadow: 0 0 10px #fff;
+      color: rgb(71, 86, 255);
+      position: absolute;
+      transform: translate(-52%, -50%);
+      z-index: 1;
+    }
+    p {
+      width: 1000px;
+      text-align: center;
+      font-size: 24px;
+      color: #fff;
+      text-shadow: 0 0 5px #000;
+      position: absolute;
+      transform: translate(-50%, 180px);
+      z-index: 1;
+    }
+    .climbing_img {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 1000px;
+      height: 600px;
+      border-radius: 40px;
+      background: url(./img/climbing.jpg) center/cover no-repeat;
+      filter: grayscale(30%);
+      box-shadow: 0 0 20px #000;
+      z-index: 0;
+    }
+    &.active {
+      display: flex;
+    }
+  }
+}
+.favorite_btn_blue:nth-child(1) {
+  .swimming_modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: all 0.3s;
+    h2 {
+      width: 1000px;
+      text-align: center;
+      font-family: "Anton", sans-serif;
+      font-size: 200px;
+      letter-spacing: 10px;
+      text-shadow: 0 0 10px #fff;
+      color: #e4f86c;
       position: absolute;
       transform: translate(-50%, -50%);
       z-index: 1;
     }
-    .modal_img {
+    p {
+      width: 1000px;
+      text-align: center;
+      font-size: 24px;
+      color: #fff;
+      text-shadow: 0 0 8px #000;
+      position: absolute;
+      transform: translate(-50%, 180px);
+      z-index: 1;
+    }
+    .swimming_img {
       position: absolute;
       transform: translate(-50%, -50%);
-      width: 1200px;
-      height: 700px;
+      width: 1000px;
+      height: 600px;
       border-radius: 40px;
-      background: url(./img/hiking.jpeg) center/cover no-repeat;
-      box-shadow: 0 0 20px var(--baground-color-blue);
+      background: url(./img/swmming.jpg) top/cover no-repeat;
+      box-shadow: 0 0 20px #000;
+      z-index: 0;
+    }
+    &.active {
+      display: flex;
+    }
+  }
+}
+
+.favorite_btn_yellow:nth-child(2) {
+  .lofi_modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: all 0.3s;
+    h2 {
+      width: 1000px;
+      text-align: center;
+      font-family: "Anton", sans-serif;
+      font-size: 250px;
+      letter-spacing: 10px;
+      text-shadow: 0 0 10px #fff;
+      color: #e4f86c;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    .lofi_img iframe {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 1000px;
+      height: 600px;
+      border-radius: 40px;
+      box-shadow: 0 0 20px #000;
+      z-index: 0;
+    }
+    &.active {
+      display: flex;
+    }
+  }
+}
+.favorite_btn_yellow:nth-child(2) {
+  .house_modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: all 0.3s;
+    h2 {
+      width: 1000px;
+      text-align: center;
+      font-family: "Anton", sans-serif;
+      font-size: 250px;
+      letter-spacing: 10px;
+      text-shadow: 0 0 10px #fff;
+      color: #e57f81;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    .house_img iframe {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 1000px;
+      height: 600px;
+      border-radius: 40px;
+      box-shadow: 0 0 20px #000;
+      z-index: 0;
+    }
+    &.active {
+      display: flex;
+    }
+  }
+}
+.favorite_btn_yellow:nth-child(2) {
+  .band_modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: all 0.3s;
+    h2 {
+      width: 1000px;
+      text-align: center;
+      font-family: "Anton", sans-serif;
+      font-size: 250px;
+      letter-spacing: 10px;
+      text-shadow: 0 0 10px #fff;
+      color: #8a4123;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    .band_img iframe {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 1000px;
+      height: 600px;
+      border-radius: 40px;
+      box-shadow: 0 0 20px #000;
       z-index: 0;
     }
     &.active {
@@ -477,27 +700,18 @@
   background-color: var(--baground-color-blue);
   border: inherit;
   color: #000;
+  box-shadow: 0 0 9px var(--baground-color-blue);
 }
 .favorite_btn_red button:hover {
   background-color: var(--baground-color-red);
   border: inherit;
+  box-shadow: 0 0 9px var(--baground-color-red);
 }
 .favorite_btn_yellow button:hover {
   background-color: var(--baground-color-yellow);
   border: inherit;
   color: #000;
-}
-#favorite_diamond {
-  position: absolute;
-  top: 35%;
-  left: 48.5%;
-  animation: ani 3s linear infinite;
-  animation-fill-mode: both;
-}
-@keyframes ani {
-  0% {
-    transform: rotateY(365deg);
-  }
+  box-shadow: 0 0 9px var(--baground-color-yellow);
 }
 
 /* contact */
