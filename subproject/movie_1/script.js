@@ -134,32 +134,33 @@ slideArrow.addEventListener("mouseout", () => {
 
 // 1. card_item 각 요소에 마우스를 오버하면, 각 item들이 위쪽으로 올라오도록 하고 싶다
 
-// 1-1. 기능을 구현하고 싶다면
-// 웹 브라우저가 card_item들이 어떤 요소들인지 알게끔 도와줘야 한다
-// 1-1-1. how ->
-// 웹 브라우저는 dom 객체 모델을 갖고 있으니까
-// 해당 dom에서 card_item들의 node를 찾아와야겠다
-// 1-1-1-1. how ->
-// dom 에서 원하는 node를 찾아오려면
-// querselector()혹은 getElemenrById()등의 함수를 사용할 수 있다
-
-// 1-2. card_item이 1개가 아니라 총 5개 이며, 5개 카드 모두 동일한 패턴 및 형식의 동적인 이벤트 기능을 가져야 한다
-
-// 2. 마우스가 a item 위에 있다가 b item으로 이동을 하게 된다면 a item 은 다시 원래의 위치로 돌아오게 하고싶고, b item은 위쪽으로 올라오게 하고 싶다
-
-// const items = document.querySelectorAll(".slide_card_items li");
-// console.log(items);
-
-// items.forEach((item) => {
-//   item.addEventListener("mouseover", () => {
-//     console.log("over");
-//     // item.style.transform = "translateY(-30px)";
-//     // item.style.transition = "all 0.3s";
-//   });
-//   item.addEventListener("mouseout", () => {
-//     item.style.transform = "translateY(0)";
-//   });
-// });
+slide.forEach((item) => {
+  item.addEventListener("mouseover", function () {
+    slide.forEach((item) => {
+      item.classList.remove("active");
+      this.classList.add("active");
+    });
+  });
+  item.addEventListener("mouseout", function () {
+    slide.forEach((item) => {
+      item.classList.remove("active");
+    });
+  });
+});
+const cloneNode = document.querySelectorAll(".clone");
+cloneNode.forEach((item) => {
+  item.addEventListener("mouseover", function () {
+    cloneNode.forEach((item) => {
+      item.classList.remove("active");
+      this.classList.add("active");
+    });
+  });
+  item.addEventListener("mouseout", function () {
+    cloneNode.forEach((item) => {
+      item.classList.remove("active");
+    });
+  });
+});
 
 //1.컴퓨터에게 상단 nav ul & li 태그를 인지시켜줘야 한다
 // 2. 상단 nav요소에 마우스를 오버하면 이벤트가 실행된다
