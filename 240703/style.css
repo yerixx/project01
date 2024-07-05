@@ -19,7 +19,6 @@
 .main {
   position: relative;
   height: 100vh;
-  cursor: url("./img/mouseck.svg") 16 0, auto;
 }
 
 .main_background_diamond {
@@ -81,8 +80,23 @@
 .slide {
   position: relative;
   height: var(--main-height);
-  background-color: var(--baground-color-yellow);
   transition: all 1s;
+  animation: slide_bg 8s infinite;
+  transition: all 20s;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+@keyframes slide_bg {
+  0% {
+    background-color: var(--baground-color-yellow);
+  }
+  80% {
+    background-color: var(--baground-color-red);
+  }
+  100% {
+    background-color: var(--baground-color-blue);
+  }
 }
 
 .slide_logo img {
