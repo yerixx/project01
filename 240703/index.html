@@ -15,49 +15,36 @@
   <body>
     <main id="appContainer">
       <!-- main -->
-      <!-- <article class="main">
-        <span class="main_background_diamond"
-          ><img src="./img/bg.png" alt="diamond" />
+      <article id="main">
+        <span class="main_logo">
+          <img src="./img/yerim.png" alt="Logo" />
         </span>
-        <span class="main_logo"><img src="./img/yerim.png" alt="Logo" /></span>
-        <p id="main_text_bottom">touch me</p>
-      </article> -->
-      <!-- slide -->
-      <article class="slide">
-        <span class="slide_logo"
-          ><img src="./img/yerim.png" alt="Logo" />
+        <span class="main_center_text_box">
+          <span class="main_text_typing"></span>
+          <span class="main_text_blink"></span>
         </span>
-        <span class="slide_text_box">
-          <span class="slide_text_typing"></span>
-          <span class="slide_text_blink"></span>
-        </span>
-        <span class="slide_scroll_bar">
-          <!-- <img src="./img/scroll bar.png" alt="" /> -->
+        <span class="main_scroll_bar">
           <span id="scroll_bar"></span>
           <span id="scroll_wheel"></span>
         </span>
-        <span class="slide_text">
-          <span class="slide_text_bottom_left">
+        <span class="main_text">
+          <span class="main_text_bottom_left">
             © YERIM. ALL RIGHTS RESERVED.
           </span>
-          <span class="slide_text_bottom_center"> SCROLL </span>
-          <span class="slide_text_bottom_right"> 1998 </span>
+          <span class="main_text_bottom_center"> SCROLL</span>
+          <span class="main_text_bottom_right"> 1998 </span>
         </span>
       </article>
       <!-- navigation -->
-      <header id="navigation_heading">
-        <article id="heading">
-          <nav id="navigation">
-            <ul class="nav_gnb">
-              <li><a href="#profile">PROFILE</a></li>
-              <li><a href="#skills_icon">SKILLS</a></li>
-              <li><a href="#favorite">LIKE</a></li>
-              <li><a href="#contact">CONTACT</a></li>
-            </ul>
-          </nav>
-        </article>
-      </header>
-      <!-- profile -->
+      <nav id="navigation">
+        <ul id="nav_gnb">
+          <li><a href="#profile">PROFILE</a></li>
+          <li><a href="#skills_icon">SKILLS</a></li>
+          <li><a href="#favorite">LIKE</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+      <!-- profile & skills -->
       <article id="profile">
         <span class="profile_text">
           <span class="profile_name">
@@ -70,7 +57,6 @@
             <li>010.5508.1689</li>
             <li>yerixxz@gmail.com</li>
             <li>Bucheon, Gyeonggi-do</li>
-
             <span class="profile_list_icon">
               <a
                 href="https://www.instagram.com/yerixxp?igsh=dHU2dTYwaXlrMHJo&utm_source=qr"
@@ -84,24 +70,105 @@
           </ul>
         </span>
         <span id="profile_image">
-          <img src="./img/profile.png" alt="profile" />
+          <img src="./img/profile2.png" alt="profile" />
         </span>
         <!-- skills -->
-        <div id="skills_icon">
+        <div id="skills">
           <span id="skills_list_icon">
-            <i class="fab fa-html5"></i>
-            <i class="fab fa-css3-alt"></i>
-            <i class="fab fa-js-square"></i>
-            <i class="fab fa-github"></i>
-            <i class="fab fa-figma"></i>
-            <span class="skills_icon_aips">
-              <img src="./img/ai.png" alt="ai" />
-              <img src="./img/ps.png" alt="ps" />
+            <span>
+              <i class="fab fa-html5"></i>
+            </span>
+            <span>
+              <i class="fab fa-css3-alt"></i>
+            </span>
+            <span>
+              <i class="fab fa-js-square"></i>
+            </span>
+            <span>
+              <i class="fab fa-github"></i>
+            </span>
+            <span>
+              <i class="fab fa-figma"></i>
             </span>
           </span>
+          <div class="skills_icon_psai">
+            <span>
+              <span class="ps">
+                <img src="./img/ps.png" alt="ps" />
+              </span>
+              <span class="ai">
+                <img src="./img/ai.png" alt="ai" />
+              </span>
+            </span>
+          </div>
+          <div class="skill-progress">
+            <section class="item">
+              <article>
+                <span>HTML5</span>
+                <span>50%</span>
+              </article>
+              <article class="progress">
+                <div class="progress-level"></div>
+              </article>
+            </section>
+            <section class="item">
+              <article>
+                <span>CSS</span>
+                <span>50%</span>
+              </article>
+              <article class="progress">
+                <div class="progress-level"></div>
+              </article>
+            </section>
+            <section class="item">
+              <article>
+                <span>JavaScript</span>
+                <span>20%</span>
+              </article>
+              <article class="progress">
+                <div class="progress-level"></div>
+              </article>
+            </section>
+            <section class="item">
+              <article>
+                <span>github</span>
+                <span>25%</span>
+              </article>
+              <article class="progress">
+                <div class="progress-level"></div>
+              </article>
+            </section>
+            <section class="item">
+              <article>
+                <span>figma</span>
+                <span>70%</span>
+              </article>
+              <article class="progress">
+                <div class="progress-level"></div>
+              </article>
+            </section>
+            <section class="item">
+              <article>
+                <span>photoshop</span>
+                <span>85%</span>
+              </article>
+              <article class="progress">
+                <div class="progress-level"></div>
+              </article>
+            </section>
+            <section class="item">
+              <article>
+                <span> illustration</span>
+                <span>80%</span>
+              </article>
+              <article class="progress">
+                <div class="progress-level"></div>
+              </article>
+            </section>
+          </div>
         </div>
       </article>
-      <!-- coontent  -->
+      <!-- content  -->
       <article id="content">
         <span class="content_text">
           <p>
@@ -143,13 +210,6 @@
               <span class="swimming_img"></span>
             </article>
           </span>
-
-          <!-- <span class="favorite_btn_red">
-            <button data-link="Casual"></button>
-            <button data-link="Y2K"></button>
-            <button data-link="Uniq"></button>
-          </span> -->
-
           <span class="favorite_btn_yellow">
             <button class="house_btn" data-link="House"></button>
             <article class="house_modal">
@@ -167,7 +227,6 @@
                 ></iframe>
               </span>
             </article>
-
             <button class="band_btn" data-link="band"></button>
             <article class="band_modal">
               <h2>Band</h2>
@@ -175,7 +234,7 @@
                 <iframe
                   width="560"
                   height="315"
-                  src="https://www.youtube.com/embed/EqAq-nqbeOQ?si=3Gp1rmA8Q7LVVnJ0&amp;controls=0&amp;start=43"
+                  src="https://www.youtube.com/embed/dg_a3J8sBfg?si=t5jacRTJ2W0EpvpO&amp;controls=0&amp;start=33"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -204,11 +263,10 @@
           </span>
 
           <span id="favorite_diamond">
-            <img src="./img/footer_logo.png" alt="diamond" />
+            <img src="./img/fav_diamond.png" alt="diamond" />
           </span>
         </span>
       </section>
-
       <!-- contact -->
       <article id="contact">
         <span id="contact_title">
@@ -217,7 +275,7 @@
         <form action="https://localhost:3000" method="get">
           <section class="contact_inner">
             <label for="name">name</label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" id="name" placeholder="i'm ready" />
           </section>
           <section class="contact_inner">
             <label for="title">title</label>
@@ -228,7 +286,7 @@
             <textarea name="message" id="message"></textarea>
           </section>
           <section id="contact_btn">
-            <input type="submit" value="i'm ready" />
+            <input type="submit" value="I'M READY" />
           </section>
         </form>
       </article>
@@ -239,7 +297,7 @@
         </span>
         <span id="footer_diamond">
           <a href="#">
-            <img src="./img/footer_logo.png" alt="diamond" />
+            <img src="./img/bg.png" alt="diamond" />
           </a>
         </span>
         <span id="footer_text"> © yerim. All rights reserved. </span>

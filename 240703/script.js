@@ -1,9 +1,8 @@
-// slide-typing - 안됨
 const content =
   // H =0 띄어쓰기도 숫자에 포함
   "FRONT-END DEVELOPER \nPORTFOLIO \n 2024";
 // 들어갈 html 의 클래스 node 값 찾기
-const text = document.querySelector(".slide_text_typing");
+const text = document.querySelector(".main_text_typing");
 console.log(text);
 // 문자 0부터 순차적으로 들어왔으면 좋겠음-> 증감연산자 사용
 // \n을 만나면 행을 바꾸게 하고싶음
