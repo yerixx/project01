@@ -12,19 +12,19 @@
 
 // const femaleBtn = document.querySelector("#femalebtn");
 //전체를 훑고 찾아주는
-const femaleBtn = document.querySelector(".female_btn");
 
+const femaleBtn = document.querySelector(".female_btn");
 const maleBtn = document.querySelector(".man_btn");
 console.log(femaleBtn, maleBtn);
 
-femaleBtn.addEventListener("click", (event) => {
+femaleBtn.addEventListener("click", () => {
   event.preventDefault();
-  femaleBtn.querySelector(".female_btn").classList.toggle("filledA");
-  maleBtn.querySelector(".man_btn").classList.remove("filledB");
+  femaleBtn.classList.toggle("filledA");
+  maleBtn.classList.remove("filledB");
 });
 
-maleBtn.addEventListener("click", (event) => {
+maleBtn.addEventListener("click", () => {
   event.preventDefault();
-  maleBtn.querySelector(".man_btn").classList.toggle("filledB");
-  femaleBtn.querySelector(".female_btn").classList.remove("filledA");
+  maleBtn.classList.toggle("filledB");
+  femaleBtn.classList.remove("filledA");
 });
