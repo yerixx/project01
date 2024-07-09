@@ -15,40 +15,18 @@ const typing = () => {
 typingInterval = setInterval(typing, 100);
 
 // scroll event
-// window.addEventListener("scroll", () => {
-//   const header = document.querySelector("#navigation");
-//   const gnb = document.querySelector(".nav_gnb_mobile");
-
-//   if (window.scrollY > 3000) {
-//     header.classList.add("active");
-//     gnb.classList.add("active");
-//   } else {
-//     header.classList.remove("active");
-//     gnb.classList.remove("active");
-//   }
-// });
-// skills event
 window.addEventListener("scroll", () => {
-  const skillProgress = document.querySelector(".skill-progress");
-  const progressLevels = document.querySelectorAll(".progress-level");
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const gnbDesktop = document.querySelector(".nav_gnb_desktop");
+  const gnbMobile = document.querySelector(".nav_gnb_mobile");
 
-  if (scrollTop >= 2000) {
-    skillProgress.classList.add("animate");
+  if (window.scrollY > 60) {
+    gnbDesktop.classList.add("active");
+    gnbMobile.classList.add("active");
   } else {
-    skillProgress.classList.remove("animate");
+    gnbDesktop.classList.remove("active");
+    gnbMobile.classList.remove("active");
   }
 });
-
-// Add animation when the class 'animate' is added
-document.styleSheets[0].insertRule(
-  `
-  .skill-progress.animate .progress-level {
-      animation: bar 4s forwards;
-  }
-`,
-  document.styleSheets[0].cssRules.length
-);
 
 // Button
 const hikingBtn = document.querySelector(".hiking_btn");
@@ -113,3 +91,17 @@ bandBtn.addEventListener("click", () => {
 bandModalBox.addEventListener("click", function () {
   this.classList.remove("active");
 });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const mobileDia1 = document.getElementById("mobile_dia_1");
+//   const mobileDia2 = document.getElementById("mobile_dia_2");
+//   const navGnbMobile = document.querySelector(".nav_gnb_mobile");
+
+//   mobileDia1.addEventListener("click", function () {
+//     navGnbMobile.classList.add("active");
+//   });
+
+//   mobileDia2.addEventListener("click", function () {
+//     navGnbMobile.classList.remove("active");
+//   });
+// });
