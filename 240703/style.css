@@ -3,11 +3,8 @@
 
 /* variable */
 :root {
-  --main-width: 1920px;
-  --main-height: 1080px;
-  --baground-color-blue: #afdeff;
-  --baground-color-yellow: #ffee96;
-  --baground-color-green: #c9eb93;
+  --background-color-blue: #afdeff;
+  --background-color-yellow: #ffee96;
 }
 
 #appContainer {
@@ -17,15 +14,14 @@
 }
 
 /* desktop */
-
 /* main */
 #main {
   position: relative;
   height: 100vh;
   animation: main_bg 8s infinite alternate;
   animation-delay: 2.6s;
-  background: var(--baground-color-yellow);
-  transition: all 0.5;
+  background: var(--background-color-yellow);
+  transition: all 0.5s;
   .main_logo img {
     position: absolute;
     top: 50%;
@@ -91,7 +87,7 @@
 .main_text {
   display: flex;
   flex-direction: column;
-  width: 1600px;
+  width: 100%;
   height: 70px;
   .main_text_bottom_left {
     position: absolute;
@@ -127,27 +123,25 @@
 }
 @keyframes main_bg {
   20% {
-    background-color: var(--baground-color-yellow);
+    background-color: var(--background-color-yellow);
   }
-  50% {
-    background-color: var(--baground-color-green);
-  }
-  100% {
-    background-color: var(--baground-color-blue);
+  70% {
+    background-color: var(--background-color-blue);
   }
 }
 
 /* navigation */
+
 #navigation {
   position: sticky;
-  top: 0;
+  display: flex;
   width: 100%;
-  height: 70px;
+  height: 60px;
   justify-content: center;
   background: #fff;
-  z-index: 3;
   transition: all 0.3s;
-  #nav_gnb {
+  z-index: 4;
+  .nav_gnb_desktop {
     display: flex;
     width: 100%;
     height: 70px;
@@ -168,10 +162,16 @@
       }
     }
   }
+  .nav_gnb_mobile {
+    display: none;
+  }
 }
 
 #navigation.active {
-  background: var(--baground-color-yellow);
+  background: var(--background-color-yellow);
+}
+#nav_gnb.active {
+  background: var(--background-color-yellow);
 }
 
 /* profile */
@@ -179,7 +179,7 @@
   position: relative;
   display: flex;
   width: 1600px;
-  height: 200vh;
+  height: 2020px;
   justify-content: space-between;
   margin: 10% 0;
   .profile_text {
@@ -241,6 +241,8 @@
     width: 700px;
     height: 760px;
     object-fit: cover;
+    background-position: center/top;
+    background-repeat: no-repeat;
     border-radius: 100px;
   }
 }
@@ -329,7 +331,7 @@
     }
     .progress {
       padding: 5px;
-      border: 1px solid var(--baground-color-blue);
+      border: 1px solid var(--background-color-blue);
       border-radius: 10px;
       .progress-level {
         height: 10px;
@@ -401,7 +403,7 @@
     letter-spacing: 0px;
   }
   .content_text mark {
-    background: var(--baground-color-yellow);
+    background: var(--background-color-yellow);
   }
   #content_text_red {
     color: #f00;
@@ -480,18 +482,22 @@
       }
     }
   }
+  .favorite_btn_blue,
+  .favorite_btn_yellow {
+    transition: all 1s;
+  }
 
   .favorite_btn_blue button:hover {
-    background: var(--baground-color-blue);
+    background: var(--background-color-blue);
     border: inherit;
     color: #000;
-    box-shadow: 0 0 9px var(--baground-color-blue);
+    box-shadow: 0 0 9px var(--background-color-blue);
   }
   .favorite_btn_yellow button:hover {
-    background: var(--baground-color-yellow);
+    background: var(--background-color-yellow);
     border: inherit;
     color: #000;
-    box-shadow: 0 0 9px var(--baground-color-yellow);
+    box-shadow: 0 0 9px var(--background-color-yellow);
   }
 
   /* favorite - modal */
@@ -511,7 +517,7 @@
         font-family: "Anton", sans-serif;
         font-size: 300px;
         letter-spacing: 10px;
-        text-shadow: 0 0 10px var(--baground-color-blue);
+        text-shadow: 0 0 10px var(--background-color-blue);
         color: tomato;
         position: absolute;
         transform: translate(-50%, -50%);
@@ -534,7 +540,7 @@
         height: 600px;
         border-radius: 40px;
         background: url(./img/hiking.jpeg) center/cover no-repeat;
-        box-shadow: 0 0 20px var(--baground-color-blue);
+        box-shadow: 0 0 20px var(--background-color-blue);
         z-index: 0;
       }
       &.active {
@@ -767,7 +773,7 @@
   align-items: center;
   width: 100%;
   height: calc(115vh - 70px);
-  background: var(--baground-color-yellow);
+  background: var(--background-color-yellow);
   #contact_title {
     display: flex;
     width: 1300px;
@@ -781,10 +787,10 @@
     padding-top: 36px;
     display: flex;
     flex-direction: column;
-    width: 1300px;
+    width: 100%;
     input {
       padding: 30px 10px 20px;
-      width: 1300px;
+      width: 100%;
       height: 40px;
       color: #444;
       border: none;
@@ -856,8 +862,8 @@ input::placeholder {
   }
   #footer_diamond {
     position: absolute;
-    bottom: 5%;
-    right: 5%;
+    bottom: 20%;
+    left: 48%;
     animation: ani 3s linear infinite;
     animation-fill-mode: both;
     cursor: pointer;
@@ -870,41 +876,35 @@ input::placeholder {
   }
 }
 
-@keyframes ani {
-  0% {
-    transform: rotateY(365deg);
-  }
-}
-
 #footer_text {
   position: absolute;
   color: #fff;
-  left: 42%;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 60px;
 }
 
-@media screen and (max-width: 1600px) and (min-width: 360px) {
+@media screen and (max-width: 1080px) and (min-width: 360px) {
   #appContainer {
     width: 100%;
   }
 
   /* main */
   #main {
-    .main_logo {
-      img {
-        top: 40%;
-        width: 60%;
-      }
+    .main_logo img {
+      top: 40%;
+      width: 60%;
     }
     .main_center_text_box {
       top: 50%;
-      width: 50%;
+      width: 55%;
       font-size: 1rem;
     }
     .main_scroll_bar {
       #scroll_bar,
       #scroll_wheel {
-        top: -170px;
+        top: -140px;
+        height: 90px;
       }
     }
     .main_text {
@@ -916,7 +916,50 @@ input::placeholder {
 
   /* navigation */
   #navigation {
-    display: none;
+    display: flex;
+    gap: 10px;
+    .nav_gnb_desktop > li {
+      display: none;
+    }
+    .mobile_logo {
+      position: absolute;
+      top: 0;
+      left: -50%;
+      scale: 0.3;
+    }
+  }
+  .nav_gnb_mobile {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    gap: 40px;
+    align-items: flex-end;
+    padding-top: 80px;
+    padding-right: 16px;
+    transition: all 0.5s;
+    & > i {
+      padding: 4px 14px;
+    }
+    & > a {
+      padding: 4px 14px;
+      transition: all 0.3s;
+      border-radius: 30px;
+      font-size: 18px;
+      &:hover {
+        color: #fff;
+        background-color: #000;
+        border-radius: 30px;
+        padding: 4px 14px;
+      }
+    }
+  }
+
+  .nav_gnb_mobile.active {
+    right: -999px;
   }
 
   /* profile */
@@ -928,7 +971,8 @@ input::placeholder {
     .profile_text {
       position: absolute;
       top: 3%;
-      left: -1%;
+      justify-content: center;
+
       .profile_name {
         h2 {
           font-size: 3.2rem;
@@ -949,73 +993,117 @@ input::placeholder {
         width: 100%;
         height: 310px;
         border-radius: 0;
+        background-position: center/top;
+        background-repeat: no-repeat;
       }
     }
-  }
 
-  /* skills */
-  #skills {
-    top: 50%;
-    left: -6%;
-    width: 100%;
-    .skill-progress {
-      width: 70%;
-      margin-left: 20px;
-    }
-  }
-  /* favorite */
-  #favorite {
-    display: none;
-  }
-  /* content */
-  #content {
-    width: 82%;
-    height: 100vh;
-    border: none;
-    display: flex;
-    .content_text {
-      font-size: 1.2rem;
-      text-align: center;
-      b {
-        font-size: 1.2rem;
+    /* skills */
+    #skills {
+      top: 50%;
+      left: -6%;
+      width: 100%;
+      .skill-progress {
+        width: 70%;
+        margin-left: 20px;
       }
     }
-  }
-
-  /* contact */
-  #contact {
-    width: 100%;
-    height: 100vh;
-    #contact_title {
-      h2 {
-        position: absolute;
-        font-size: 4.7rem;
+    /* favorite */
+    #favorite {
+      .favorite_title {
+        font-size: 5rem;
       }
-      .contact_inner {
+      .favorite_btn button {
+        width: 105px;
+        height: 50px;
+        margin: 16px 6px;
         font-size: 1rem;
+        line-height: 50px;
+      }
+      .hiking_modal,
+      .climbing_modal,
+      .swimming_modal,
+      .house_modal,
+      .band_modal,
+      .lofi_modal {
+        position: absolute;
+        bottom: -65%;
+        scale: 0.41;
+      }
+
+      #favorite_diamond {
+        scale: 0.7;
+        top: 42%;
+        left: 150px;
       }
     }
-    form {
-      width: 50%;
-    }
-  }
-  /* footer */
-  #footer {
-    width: 100%;
-    #footer_logo {
-      top: 45%;
-      left: 40%;
-      img {
-        width: 140%;
-        height: 100%;
+
+    /* content */
+    #content {
+      width: calc(100% - 23%);
+      height: 100vh;
+      border: none;
+      display: flex;
+      .content_text {
+        font-size: 1.2rem;
+        text-align: center;
+        b {
+          font-size: 1.2rem;
+        }
       }
     }
-    #footer_diamond {
-      top: 5%;
+
+    /* contact */
+    #contact {
+      width: 100%;
+      height: 100vh;
+      #contact_title {
+        h2 {
+          position: absolute;
+
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 3.8rem;
+        }
+      }
+      form {
+        .contact_inner {
+          width: 100%;
+          &:first-of-type {
+            padding-top: 70px;
+          }
+          label {
+            font-size: 1.2rem;
+          }
+          input {
+            font-size: 1.2rem;
+          }
+        }
+        #contact_btn {
+          width: 120%;
+          scale: 0.7;
+        }
+      }
     }
-    #footer_text {
-      left: 25%;
-      font-size: 0.8rem;
+    /* footer */
+    #footer {
+      width: 100%;
+      #footer_logo {
+        top: 45%;
+        left: 40%;
+        img {
+          width: 140%;
+          height: 100%;
+        }
+      }
+      #footer_diamond {
+        bottom: 25%;
+      }
+      #footer_text {
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.8rem;
+      }
     }
   }
 }

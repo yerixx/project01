@@ -37,7 +37,22 @@
       </article>
       <!-- navigation -->
       <nav id="navigation">
-        <ul id="nav_gnb">
+        <ul class="nav_gnb_desktop">
+          <li><a href="#profile">PROFILE</a></li>
+          <li><a href="#skills_icon">SKILLS</a></li>
+          <li><a href="#favorite">LIKE</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+
+        <span class="mobile_logo">
+          <img src="./img/yerim.png" alt="yerim" />
+        </span>
+        <span>
+          <img src="./img/fav_diamond.png" alt="diamond" />
+        </span>
+
+        <ul class="nav_gnb_mobile active">
+          <i class="fas fa-circle"></i>
           <li><a href="#profile">PROFILE</a></li>
           <li><a href="#skills_icon">SKILLS</a></li>
           <li><a href="#favorite">LIKE</a></li>
@@ -70,7 +85,7 @@
           </ul>
         </span>
         <span id="profile_image">
-          <img src="./img/profile2.png" alt="profile" />
+          <img src="./img/profile.png" alt="profile" />
         </span>
         <!-- skills -->
         <div id="skills">
@@ -173,7 +188,7 @@
         <span class="content_text">
           <p>
             <b>SPACE DESIGNER</b>에서<br />
-            <b>FRONTEND DEVELOPER</b>가 되기 위해 <mark>새로운 도전</mark>을
+            <b>FRONT-END DEVELOPER</b>가 되기 위해 <mark>새로운 도전</mark>을
             하고있습니다.<br />
             <b> <b id="content_text_red">MAKE THE BEST </b>OF THE SITUATION</b
             >의 가치관을 추구합니다.
@@ -273,11 +288,11 @@
           <h2>CONTACT</h2>
         </span>
         <form action="https://localhost:3000" method="get">
-          <section class="contact_inner">
+          <section class="contact_inner name">
             <label for="name">name</label>
             <input type="text" name="name" id="name" placeholder="i'm ready" />
           </section>
-          <section class="contact_inner">
+          <section class="contact_inner title">
             <label for="title">title</label>
             <input type="text" name="title" id="title" />
           </section>
