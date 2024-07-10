@@ -14,18 +14,70 @@ const typing = () => {
 
 typingInterval = setInterval(typing, 100);
 
-// scroll event
-window.addEventListener("scroll", () => {
-  const gnbDesktop = document.querySelector(".nav_gnb_desktop");
-  const gnbMobile = document.querySelector(".nav_gnb_mobile");
+// 스크롤바 이벤트
+window.addEventListener("scroll", function () {
+  const scrollTop = window.scrollY;
+  console.log(scrollTop);
+  const nav = document.querySelector("#navigation");
+  const navDeskGnb = nav.querySelector(".nav_gnb_desktop");
+  const navMoGnb = nav.querySelector(".nav_gnb_mobile");
+  const mobileLogo = nav.querySelector(".mobile_logo");
 
-  if (window.scrollY > 60) {
-    gnbDesktop.classList.add("active");
-    gnbMobile.classList.add("active");
+  if (scrollTop >= 4000) {
+    nav.style.backgroundColor = "#ffee96";
+    navDeskGnb.style.backgroundColor = "#ffee96";
+    mobileLogo.style.backgroundColor = "#ffee96";
+    navMoGnb.style.backgroundColor = "#ffee96";
   } else {
-    gnbDesktop.classList.remove("active");
-    gnbMobile.classList.remove("active");
+    nav.style.backgroundColor = "white";
+    navDeskGnb.style.backgroundColor = "white";
+    mobileLogo.style.backgroundColor = "white";
+    navMoGnb.style.backgroundColor = "white";
   }
+});
+
+//skills event
+window.addEventListener("scroll", () => {
+  const skillProgress = document.querySelector(".skill-progress");
+  const progressLevels = document.querySelectorAll(".progress-level");
+  const scrollTop = window.scrollY;
+
+  if (scrollTop >= 2000) {
+    skillProgress.classList.add("animate");
+  } else {
+    skillProgress.classList.remove("animate");
+  }
+  if (scrollTop >= 1490) {
+    skillProgress.classList.add("animate");
+  } else {
+    skillProgress.classList.remove("animate");
+  }
+});
+
+// Add animation when the class 'animate' is added
+document.styleSheets[0].insertRule(
+  `
+  .skill-progress.animate .progress-level {
+      animation: bar 4s forwards;
+  }
+`,
+  document.styleSheets[0].cssRules.length
+);
+
+//trigger mobile
+const ToggleBtn1 = document.querySelector(".trigger");
+const ToggleBtn2 = document.querySelector(".mobile_dia_trigger");
+const gnbMo = document.querySelector(".nav_gnb_mobile");
+console.log(ToggleBtn1, ToggleBtn2, gnbMo);
+
+ToggleBtn2.addEventListener("click", () => {
+  console.log("click");
+  gnbMo.classList.add("action");
+});
+
+ToggleBtn1.addEventListener("click", () => {
+  console.log("click");
+  gnbMo.classList.remove("action");
 });
 
 // Button
@@ -104,4 +156,25 @@ bandModalBox.addEventListener("click", function () {
 //   mobileDia2.addEventListener("click", function () {
 //     navGnbMobile.classList.remove("active");
 //   });
+// });
+
+// Skills event
+//특정 위치에 오면 progress-level바가 시작되게 하고싶음
+// window에 addEventListener로 scroll이벤트를 줘야함
+//skill-progress와 progress-level를 가져오게 해야함
+// window.addEventListener("scroll", function () {
+//   const scroll1 = window.scrollY;
+//   const skillProgress = document.querySelector(".skill-progress");
+//   const skillLevel = document.querySelectorAll(".progress-level");
+//   console.log(skillProgress, skillLevel);
+
+//   if (scroll1 >= 2260) {
+//     skillLevel.forEach((skillItem, index) => {
+//       setTimeout(() => {
+//         if (index <= skillLevel.length) {
+//           skillItem.classList.add("active");
+//         }
+//       }, 1000 * index);
+//     });
+//   }
 // });

@@ -3,17 +3,15 @@
 
 /* variable */
 :root {
-  --main-width: 1920px;
-  --main-height: 1080px;
   --background-color-blue: #afdeff;
   --background-color-yellow: #ffee96;
 }
 
 #appContainer {
   width: 100%;
-  overflow-x: hidden;
-  font-family: "Encode Sans SC", sans-serif;
+  /* overflow-x: hidden; */
   overflow: visible;
+  font-family: "Encode Sans SC", sans-serif;
 }
 
 /* desktop */
@@ -23,7 +21,7 @@
   height: 100vh;
   animation: main_bg 8s infinite alternate;
   animation-delay: 2.6s;
-  background: var(--background-color-yellow);
+  background-color: var(--background-color-yellow);
   transition: all 0.5s;
   .main_logo img {
     position: absolute;
@@ -66,7 +64,7 @@
     left: 0;
     width: 2px;
     height: 130px;
-    background: #000;
+    background-color: #000;
   }
   #scroll_wheel {
     position: absolute;
@@ -74,7 +72,7 @@
     left: -2px;
     width: 6px;
     height: 100px;
-    background: #000;
+    background-color: #000;
     transition: all 0.3s;
     animation: wheel 2s linear infinite;
     /* AIN 종료되면 다시 시작 */
@@ -140,17 +138,18 @@
   width: 100%;
   height: 60px;
   justify-content: center;
-  background: #fff;
   z-index: 4;
   transition: all 0.3s;
+  transition: background 0.3s;
   .nav_gnb_desktop {
     display: flex;
     width: 100%;
-    height: 70px;
+    height: 60px;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    background-color: #fff;
     gap: 60px;
+    transition: background 0.3s;
     a {
       padding: 4px 14px;
       transition: all 0.3s;
@@ -164,22 +163,18 @@
       }
     }
   }
+  .nav_gnb_mobile,
+  .trigger,
   .mobile_logo,
-  .mobile_dia,
-  .nav_gnb_mobile {
+  .mobile_dia_trigger {
     display: none;
   }
-}
-.nav_gnb_mobile.open {
-  display: block;
-}
-#navigation.active {
-  background: var(--background-color-yellow);
-}
-#nav_gnb.active {
-  background: var(--background-color-yellow);
-}
 
+  .mobile_logo {
+    height: 60px;
+    transition: all 0.3s;
+  }
+}
 /* profile */
 #profile {
   position: relative;
@@ -316,8 +311,8 @@
     }
   }
 }
-
-.skill-progress {
+/* 수정전 */
+/* .skill-progress {
   position: absolute;
   top: 4%;
   left: 24%;
@@ -341,47 +336,174 @@
       border-radius: 10px;
       .progress-level {
         height: 10px;
-        background: #000;
+        background-color: #000;
         border-radius: 5px;
-        animation: bar 4s;
+        animation: bar 5s;
       }
     }
   }
-}
-
-@keyframes bar {
+} */
+/* @keyframes bar {
   0% {
     width: 0;
   }
 }
 
-.skill-progress > .item:nth-of-type(1) .progress-level {
+.skill-progress.animate > .item:nth-of-type(1) .progress-level {
   width: 50%;
   animation-delay: 0s;
 }
-.skill-progress > .item:nth-of-type(2) .progress-level {
+.skill-progress.animate > .item:nth-of-type(2) .progress-level {
   width: 50%;
   animation-delay: 0.2s;
 }
-.skill-progress > .item:nth-of-type(3) .progress-level {
+.skill-progress.animate > .item:nth-of-type(3) .progress-level {
   width: 20%;
   animation-delay: 0.4s;
 }
-.skill-progress > .item:nth-of-type(4) .progress-level {
+.skill-progress.animate > .item:nth-of-type(4) .progress-level {
   width: 25%;
   animation-delay: 0.6s;
 }
-.skill-progress > .item:nth-of-type(5) .progress-level {
+.skill-progress.animate > .item:nth-of-type(5) .progress-level {
   width: 70%;
   animation-delay: 0.8s;
 }
-.skill-progress > .item:nth-of-type(6) .progress-level {
+.skill-progress.animate > .item:nth-of-type(6) .progress-level {
   width: 85%;
   animation-delay: 1s;
 }
-.skill-progress > .item:nth-of-type(7) .progress-level {
+.skill-progress.animate > .item:nth-of-type(7) .progress-level {
   width: 80%;
   animation-delay: 1.2s;
+} */
+
+/* 수정후 */
+.skill-progress {
+  position: absolute;
+  top: 4%;
+  left: 24%;
+  width: 600px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px;
+  .item {
+    margin-top: 48px;
+    article {
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      &:first-child {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .progress {
+      padding: 5px;
+      border: 1px solid var(--background-color-blue);
+      border-radius: 10px;
+      .progress-level {
+        /* 추가 */
+        width: 0;
+        height: 10px;
+        background: #000;
+        border-radius: 5px;
+      }
+    }
+  }
+  &.animate .progress-level {
+    /* 수정 */
+    animation: bar 4s;
+  }
+}
+.skill-progress.animate .item:nth-of-type(1) .progress-level {
+  animation: bar1 4s forwards;
+}
+
+.skill-progress.animate .item:nth-of-type(2) .progress-level {
+  animation: bar2 4s forwards;
+}
+
+.skill-progress.animate .item:nth-of-type(3) .progress-level {
+  animation: bar3 4s forwards;
+}
+
+.skill-progress.animate .item:nth-of-type(4) .progress-level {
+  animation: bar4 4s forwards;
+}
+
+.skill-progress.animate .item:nth-of-type(5) .progress-level {
+  animation: bar5 4s forwards;
+}
+
+.skill-progress.animate .item:nth-of-type(6) .progress-level {
+  animation: bar6 4s forwards;
+}
+
+.skill-progress.animate .item:nth-of-type(7) .progress-level {
+  animation: bar7 4s forwards;
+}
+
+@keyframes bar1 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50%;
+  }
+}
+
+@keyframes bar2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50%;
+  }
+}
+
+@keyframes bar3 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 20%;
+  }
+}
+
+@keyframes bar4 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 25%;
+  }
+}
+
+@keyframes bar5 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 70%;
+  }
+}
+
+@keyframes bar6 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
+}
+
+@keyframes bar7 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
 }
 
 /* content */
@@ -409,7 +531,7 @@
     letter-spacing: 0px;
   }
   .content_text mark {
-    background: var(--background-color-yellow);
+    background-color: var(--background-color-yellow);
   }
   #content_text_red {
     color: #f00;
@@ -507,12 +629,12 @@
     .hiking_modal {
       display: none;
       position: absolute;
+      opacity: 0;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       background-color: #000;
-      z-index: 2;
-      transition: all 0.5s;
+      /* z-index: 2; */
       h2 {
         width: 1000px;
         text-align: center;
@@ -541,13 +663,13 @@
         width: 1000px;
         height: 600px;
         border-radius: 40px;
-        background: url(./img/hiking.jpeg) center/cover no-repeat;
+        background: url("./img/hiking.jpeg") center/cover no-repeat;
         box-shadow: 0 0 20px var(--background-color-blue);
         z-index: 0;
       }
       &.active {
         display: flex;
-        transition: all 0.5s;
+        opacity: 1;
       }
     }
   }
@@ -559,7 +681,6 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 2;
-      transition: all 0.5s;
       h2 {
         width: 1000px;
         text-align: center;
@@ -588,14 +709,13 @@
         width: 1000px;
         height: 600px;
         border-radius: 40px;
-        background: url(./img/climbing.jpg) center/cover no-repeat;
+        background: url("./img/climbing.jpg") center/cover no-repeat;
         filter: grayscale(30%);
         box-shadow: 0 0 20px #000;
         z-index: 0;
       }
       &.active {
         display: flex;
-        transition: all 0.5s;
       }
     }
   }
@@ -607,7 +727,6 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 2;
-      transition: all 0.5s;
       h2 {
         width: 1000px;
         text-align: center;
@@ -636,13 +755,12 @@
         width: 1000px;
         height: 600px;
         border-radius: 40px;
-        background: url(./img/swmming.jpg) top/cover no-repeat;
+        background: url("./img/swmming.jpg") top/cover no-repeat;
         box-shadow: 0 0 20px #000;
         z-index: 0;
       }
       &.active {
         display: flex;
-        transition: all 0.5s;
       }
     }
   }
@@ -655,7 +773,6 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 2;
-      transition: all 0.5s;
       h2 {
         width: 1000px;
         text-align: center;
@@ -936,20 +1053,24 @@ input::placeholder {
       flex-direction: column;
       position: fixed;
       top: 0;
-      right: -9999px;
+      /* right: 0; */
+      right: -200%;
       width: 100%;
       height: 100vh;
       background: #fff;
-      gap: 40px;
+      gap: 50px;
       align-items: flex-end;
-      padding-top: 20%;
+      padding-top: 25%;
       padding-right: 5%;
       transition: all 0.5s;
-      z-index: 5;
+      z-index: 6;
       a {
-        transition: all 0.3s;
+        transition: all 0.5s;
+        font-size: 1.6rem;
+        text-align: center;
+        padding: 4px 14px;
         border-radius: 30px;
-        font-size: 18px;
+        border: 1px solid#999;
         &:hover {
           color: #fff;
           background-color: #000;
@@ -957,22 +1078,27 @@ input::placeholder {
           padding: 4px 14px;
         }
       }
+
+      &.action {
+        right: 0;
+      }
     }
     .mobile_logo {
       position: absolute;
       display: flex;
       flex-direction: column;
-      top: 5px;
+      top: 0;
       left: 25px;
       img {
-        width: 33%;
+        width: 30%;
       }
     }
-    .mobile_dia {
+    .trigger,
+    .mobile_dia_trigger {
       position: absolute;
       display: flex;
       flex-direction: column;
-      top: 8px;
+      top: 4px;
       right: 20px;
       transition: all 0.3s;
       img {
@@ -984,9 +1110,6 @@ input::placeholder {
       }
     }
   }
-  .nav_gnb_mobile.active {
-    right: 0;
-  }
 
   /* profile */
   #profile {
@@ -997,7 +1120,7 @@ input::placeholder {
     border-bottom: 1px solid #000;
     .profile_text {
       position: absolute;
-      top: 3%;
+      top: 4%;
       justify-content: center;
       .profile_name {
         h2 {
@@ -1050,11 +1173,28 @@ input::placeholder {
         line-height: 50px;
       }
       .favorite_btn_blue {
-        .hiking_modal,
-        .climbing_modal,
+        .hiking_modal {
+          margin-top: 58px;
+          scale: 0.4;
+          p {
+            font-size: 2rem;
+          }
+        }
+        .climbing_modal {
+          margin-top: 58px;
+          margin-left: 2%;
+          scale: 0.4;
+          p {
+            font-size: 2rem;
+          }
+        }
         .swimming_modal {
-          margin-top: 70px;
-          scale: 0.43;
+          margin-top: 58px;
+          margin-left: 1%;
+          scale: 0.4;
+          h2 {
+            font-size: 12rem;
+          }
           p {
             font-size: 2rem;
           }
@@ -1067,7 +1207,7 @@ input::placeholder {
           margin-top: 70px;
           scale: 0.43;
           h2 {
-            font-size: 20rem;
+            font-size: 19rem;
           }
           p {
             font-size: 2rem;
