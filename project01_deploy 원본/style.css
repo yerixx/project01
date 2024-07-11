@@ -5,17 +5,22 @@
 :root {
   --background-color-blue: #afdeff;
   --background-color-yellow: #ffee96;
+  --background-color-black: #121212;
 }
-
+body {
+  overflow-x: hidden;
+}
 #appContainer {
   width: 100%;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   overflow: visible;
   font-family: "Encode Sans SC", sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* desktop */
 /* main */
+
 #main {
   position: relative;
   height: 100vh;
@@ -148,6 +153,7 @@
     justify-content: center;
     align-items: center;
     background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     gap: 60px;
     transition: background 0.3s;
     a {
@@ -173,6 +179,10 @@
   .mobile_logo {
     height: 60px;
     transition: all 0.3s;
+    button {
+      background-color: inherit;
+      border: none;
+    }
   }
 }
 /* profile */
@@ -182,7 +192,7 @@
   width: 1600px;
   height: 2020px;
   justify-content: space-between;
-  margin: 10% 0;
+  margin: 10% auto;
   .profile_text {
     display: flex;
     flex-direction: column;
@@ -470,359 +480,142 @@
     color: #f00;
   }
 }
-
-/*  favorite */
-#favorite {
-  position: relative;
-  display: flex;
-  flex-direction: column;
+/* like */
+#like {
   width: 100%;
   height: 100vh;
-  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  background: url("./img/like\ bg.png") center/cover no-repeat;
-  .favorite_title {
-    margin-top: 120px;
-    font-size: 120px;
-    font-weight: bold;
-  }
-  .favorite_btn {
+  justify-content: center;
+  background-color: #fff;
+  .like_container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    padding-bottom: 130px;
-    button {
-      display: inline-block;
+    width: 1250px;
+    overflow: hidden;
+    .like_title {
       position: relative;
-      width: 200px;
-      height: 70px;
-      margin: 18px;
-      color: #fff;
-      background-color: #000;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
-      border-radius: 50px;
-      border: none;
-      line-height: 70px;
-      font-size: 20px;
-      text-transform: uppercase;
+      display: flex;
+      width: 100%;
+      padding: 50px 10px 20px;
+      font: bold 60px/1.1 "Encode Sans SC", sans-serif;
+      .like_arrow {
+        button {
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          padding: 10px 15px;
+          gap: 20px;
+          background-color: inherit;
+          border: 1px solid #000;
+          border-radius: 20px;
+          font-size: 20px;
+          transition: all 0.5s;
+          i {
+            display: flex;
+            align-items: center;
+          }
+          &:hover {
+            background-color: #000;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .like_contents {
       overflow: hidden;
-      cursor: pointer;
-      &::before,
-      &::after {
-        content: attr(data-link);
-        /* 전후문자 가져와서 겹치니까 absolute로 합침 */
-        position: absolute;
+      display: flex;
+      margin: 0 auto;
+      gap: 10px;
+      &.animated {
+        transition: all 0.5s ease-out;
+      }
+      .like_content {
+        width: 400px;
+        height: 460px;
+        background-color: #fff;
+        border: 1px solid #000;
+        border-radius: 24px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        margin: 40px 0 50px;
+        margin-left: 10px;
         transition: all 0.3s;
+        .like_desc {
+          display: flex;
+          justify-content: space-between;
+          padding: 30px;
+          border-radius: 24px;
+          i {
+            font-size: 22px;
+          }
+          .like_img {
+            display: flex;
+            position: relative;
+            width: 220px;
+            height: 200px;
+            img {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              border-radius: 10px;
+            }
+          }
+        }
+        .like_text {
+          padding: 20px 40px;
+          h1 {
+            font-size: 28px;
+            padding-bottom: 10px;
+          }
+          p {
+            font: 300 18px/1.5 "noto sans kr";
+          }
+        }
+        .like_desc_video {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 30px;
+          border-radius: 24px;
+          gap: 5px;
+          i {
+            font-size: 22px;
+          }
+          h1 {
+            padding-top: 10px;
+            font-size: 28px;
+          }
+          p {
+            font: 300 18px/1.5 "noto sans kr";
+          }
+          .video {
+            position: relative;
+            border-radius: 20px;
+            padding-top: 20px;
+            width: 340px;
+            height: 230px;
+            iframe {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
       }
-      /* 전 선택자는 그대로 */
-      &::before {
-        top: 0;
-        left: 50%;
-        transform: translatex(-50%);
-      }
-      /* 후 선택자는 100%만큼 내려갔다가*/
-      &::after {
-        top: 100%;
-        left: 50%;
-        transform: translatex(-50%);
-        color: #000;
-      }
-      /* 마우스 오버하면 100%올라가기*/
-      &:hover::before {
-        top: -100%;
-        left: 50%;
-        transform: translatex(-50%);
-      }
-      /* 마우스 오버하면 원래위치로 올라가기*/
-      &:hover::after {
-        top: 0;
-        left: 50%;
-        transform: translatex(-50%);
-      }
-    }
-  }
-
-  .favorite_btn_blue button:hover {
-    background: var(--background-color-blue);
-    border: inherit;
-    color: #000;
-    box-shadow: 0 0 9px var(--background-color-blue);
-  }
-  .favorite_btn_yellow button:hover {
-    background: var(--background-color-yellow);
-    border: inherit;
-    color: #000;
-    box-shadow: 0 0 9px var(--background-color-yellow);
-  }
-
-  /* favorite - modal */
-  .favorite_btn_blue:nth-child(1) {
-    .hiking_modal {
-      display: none;
-      position: absolute;
-      opacity: 0;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #000;
-      /* z-index: 2; */
-      h2 {
-        width: 1000px;
-        text-align: center;
-        font-family: "Anton", sans-serif;
-        font-size: 300px;
-        letter-spacing: 10px;
-        text-shadow: 0 0 10px var(--background-color-blue);
-        color: tomato;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-      }
-      p {
-        width: 1000px;
-        text-align: center;
-        font-size: 22px;
-        color: #000;
-        text-shadow: 0 0 10px #fff;
-        position: absolute;
-        transform: translate(-50%, 200px);
-        z-index: 1;
-      }
-      .hiking_img {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        width: 1000px;
-        height: 600px;
-        border-radius: 40px;
-        background: url("./img/hiking.jpeg") center/cover no-repeat;
-        box-shadow: 0 0 20px var(--background-color-blue);
-        z-index: 0;
-      }
-      &.active {
-        display: flex;
-        opacity: 1;
-      }
-    }
-  }
-  .favorite_btn_blue:nth-child(1) {
-    .climbing_modal {
-      display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-      h2 {
-        width: 1000px;
-        text-align: center;
-        font-family: "Anton", sans-serif;
-        font-size: 230px;
-        letter-spacing: 10px;
-        text-shadow: 0 0 10px #fff;
-        color: rgb(71, 86, 255);
-        position: absolute;
-        transform: translate(-52%, -50%);
-        z-index: 1;
-      }
-      p {
-        width: 1000px;
-        text-align: center;
-        font-size: 24px;
-        color: #fff;
-        text-shadow: 0 0 5px #000;
-        position: absolute;
-        transform: translate(-50%, 180px);
-        z-index: 1;
-      }
-      .climbing_img {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        width: 1000px;
-        height: 600px;
-        border-radius: 40px;
-        background: url("./img/climbing.jpg") center/cover no-repeat;
-        filter: grayscale(30%);
-        box-shadow: 0 0 20px #000;
-        z-index: 0;
-      }
-      &.active {
-        display: flex;
-      }
-    }
-  }
-  .favorite_btn_blue:nth-child(1) {
-    .swimming_modal {
-      display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-      h2 {
-        width: 1000px;
-        text-align: center;
-        font-family: "Anton", sans-serif;
-        font-size: 200px;
-        letter-spacing: 10px;
-        text-shadow: 0 0 10px #fff;
-        color: #e4f86c;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-      }
-      p {
-        width: 1000px;
-        text-align: center;
-        font-size: 24px;
-        color: #fff;
-        text-shadow: 0 0 8px #000;
-        position: absolute;
-        transform: translate(-50%, 180px);
-        z-index: 1;
-      }
-      .swimming_img {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        width: 1000px;
-        height: 600px;
-        border-radius: 40px;
-        background: url("./img/swmming.jpg") top/cover no-repeat;
-        box-shadow: 0 0 20px #000;
-        z-index: 0;
-      }
-      &.active {
-        display: flex;
-      }
-    }
-  }
-
-  .favorite_btn_yellow:nth-child(2) {
-    .lofi_modal {
-      display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-      h2 {
-        width: 1000px;
-        text-align: center;
-        font-family: "Anton", sans-serif;
-        font-size: 250px;
-        letter-spacing: 10px;
-        text-shadow: 0 0 10px #fff;
-        color: #e4f86c;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-      }
-      .lofi_img iframe {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        width: 1000px;
-        height: 600px;
-        border-radius: 40px;
-        box-shadow: 0 0 20px #000;
-        z-index: 0;
-      }
-      &.active {
-        display: flex;
-        transition: all 0.5s;
-      }
-    }
-  }
-  .favorite_btn_yellow:nth-child(2) {
-    .house_modal {
-      display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-      transition: all 0.5s;
-      h2 {
-        width: 1000px;
-        text-align: center;
-        font-family: "Anton", sans-serif;
-        font-size: 250px;
-        letter-spacing: 10px;
-        text-shadow: 0 0 10px #fff;
-        color: #e57f81;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-      }
-      .house_img iframe {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        width: 1000px;
-        height: 600px;
-        border-radius: 40px;
-        box-shadow: 0 0 20px #000;
-        z-index: 0;
-      }
-      &.active {
-        display: flex;
-        transition: all 0.5s;
-      }
-    }
-  }
-  .favorite_btn_yellow:nth-child(2) {
-    .band_modal {
-      display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-      transition: all 0.5s;
-      h2 {
-        width: 1000px;
-        text-align: center;
-        font-family: "Anton", sans-serif;
-        font-size: 250px;
-        letter-spacing: 10px;
-        text-shadow: 0 0 10px #fff;
-        color: #8a4123;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-      }
-      .band_img iframe {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        width: 1000px;
-        height: 600px;
-        border-radius: 40px;
-        box-shadow: 0 0 20px #000;
-        z-index: 0;
-      }
-      &.active {
-        display: flex;
-        transition: all 0.5s;
-      }
-    }
-  }
-
-  #favorite_diamond {
-    position: absolute;
-    top: 40%;
-    left: 48%;
-    animation: ani 3s linear infinite;
-    animation-fill-mode: both;
-    img {
-      width: 70px;
     }
   }
 }
-@keyframes ani {
-  0% {
-    transform: rotateY(365deg);
-  }
-}
 
+.like_content.active {
+  transform: translateY(-30px);
+}
 /* contact */
 #contact {
   display: flex;
@@ -849,7 +642,7 @@
     input {
       padding: 30px 10px 20px;
       width: 100%;
-      height: 40px;
+      height: 36px;
       color: #444;
       border: none;
       outline: none;
@@ -866,7 +659,7 @@ input::placeholder {
 
 #message {
   padding: 30px 0;
-  height: 280px;
+  height: 260px;
   resize: none;
   outline: none;
   font-size: 24px;
@@ -887,12 +680,14 @@ input::placeholder {
     width: 180px;
     height: 55px;
     border-radius: 50px;
+    border: none;
     background-color: #000;
     color: #fff;
     transition: all 0.3s;
     &:hover {
       background-color: inherit;
       color: #000;
+      border: 1px solid #000;
     }
   }
 }
@@ -907,15 +702,14 @@ input::placeholder {
   #footer_logo {
     position: absolute;
     top: 37%;
-    left: 47%;
+    left: 52%;
     color: #fff;
     font: normal 100px/1 "Rozha One";
-    letter-spacing: 3px;
     transform: translateX(-50%);
     justify-content: center;
     align-items: center;
     img {
-      width: 110%;
+      width: 90%;
     }
   }
   #footer_diamond {
@@ -942,7 +736,7 @@ input::placeholder {
   bottom: 60px;
 }
 
-@media screen and (max-width: 1080px) and (min-width: 360px) {
+@media screen and (max-width: 780px) {
   #appContainer {
     width: 100%;
   }
@@ -950,9 +744,15 @@ input::placeholder {
   /* main */
   #main {
     position: relative;
-    .main_logo img {
-      top: 40%;
-      width: 60%;
+    .main_logo {
+      button {
+        background-color: none;
+        border: none;
+      }
+      img {
+        top: 40%;
+        width: 60%;
+      }
     }
     .main_center_text_box {
       top: 50%;
@@ -1011,7 +811,6 @@ input::placeholder {
           padding: 4px 14px;
         }
       }
-
       &.action {
         right: 0;
       }
@@ -1019,11 +818,20 @@ input::placeholder {
     .mobile_logo {
       position: absolute;
       display: flex;
-      flex-direction: column;
       top: 0;
       left: 25px;
       img {
         width: 140px;
+      }
+      #toggle-dark {
+        button {
+          border: none;
+          background-color: inherit;
+          padding-top: 20px;
+          padding-right: 15px;
+          text-align: center;
+          font-size: 20px;
+        }
       }
     }
     .trigger,
@@ -1034,12 +842,12 @@ input::placeholder {
       top: 4px;
       right: 20px;
       transition: all 0.3s;
+      cursor: pointer;
       img {
         width: 45px;
       }
       &:hover {
         scale: 1.3;
-        cursor: pointer;
       }
     }
   }
@@ -1048,6 +856,7 @@ input::placeholder {
   #profile {
     display: flex;
     flex-direction: column;
+    top: -50px;
     width: 100%;
     height: 1550px;
     border-bottom: 1px solid #000;
@@ -1068,6 +877,9 @@ input::placeholder {
         position: absolute;
         top: 47%;
         font-size: 1.3rem;
+        .profile_list_icon {
+          margin-top: 10px;
+        }
       }
     }
     #profile_image {
@@ -1092,81 +904,105 @@ input::placeholder {
       margin-left: 20px;
     }
   }
-  /* favorite */
-  #favorite {
-    .favorite_title {
-      font-size: 5rem;
-    }
-    .favorite_btn {
-      button {
-        width: 105px;
-        height: 50px;
-        margin: 16px 6px;
-        font-size: 1rem;
-        line-height: 50px;
-      }
-      .favorite_btn_blue {
-        .hiking_modal {
-          margin-top: 58px;
-          scale: 0.4;
-          p {
-            font-size: 2rem;
-          }
-        }
-        .climbing_modal {
-          margin-top: 58px;
-          margin-left: 2%;
-          scale: 0.4;
-          p {
-            font-size: 2rem;
-          }
-        }
-        .swimming_modal {
-          margin-top: 58px;
-          margin-left: 1%;
-          scale: 0.4;
-          h2 {
-            font-size: 12rem;
-          }
-          p {
-            font-size: 2rem;
-          }
-        }
-      }
-      .favorite_btn_yellow {
-        .house_modal,
-        .band_modal,
-        .lofi_modal {
-          margin-top: 70px;
-          scale: 0.43;
-          h2 {
-            font-size: 19rem;
-          }
-          p {
-            font-size: 2rem;
-          }
-        }
-      }
-    }
-
-    #favorite_diamond {
-      scale: 0.7;
-      top: 40%;
-      left: 42%;
-    }
-  }
 
   /* content */
   #content {
-    width: calc(100% - 23%);
-    height: 100vh;
+    width: calc(100% - 110px);
+    height: calc(100vh - 100px);
     border: none;
     display: flex;
+
     .content_text {
       font-size: 1.2rem;
       text-align: center;
+      padding-bottom: 100px;
       b {
         font-size: 1.2rem;
+      }
+    }
+  }
+  /* like */
+  #like {
+    width: 100%;
+    .like_container {
+      width: 100%;
+      .like_title {
+        width: 100%;
+        padding: 0 20px 70px;
+        font-size: 30px;
+        border-bottom: 20px;
+        .like_arrow {
+          font-size: 12px;
+          button {
+            right: 60%;
+            padding: 10px 15px;
+            font-size: 16px;
+            i {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      .like_contents {
+        scale: 0.9;
+        .like_content {
+          .like_desc {
+            flex-direction: column;
+            i {
+              padding: 10px;
+              font-size: 20px;
+            }
+
+            .like_img {
+              padding-left: 30px;
+              display: flex;
+              position: relative;
+              width: 280px;
+              height: 200px;
+              img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+              }
+            }
+          }
+          .like_text {
+            padding: 0 40px;
+            h1 {
+              font-size: 28px;
+              padding-bottom: 10px;
+            }
+            p {
+              font: 300 18px/1.5 "noto sans kr";
+            }
+          }
+          .like_desc_video {
+            i {
+              font-size: 20px;
+            }
+            h1 {
+              padding-top: 10px;
+              font-size: 28px;
+            }
+            p {
+              font: 300 19px/1.5 "noto sans kr";
+            }
+            .video {
+              position: relative;
+              border-radius: 20px;
+              padding-top: 20px;
+              width: 340px;
+              height: 240px;
+              iframe {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
       }
     }
   }

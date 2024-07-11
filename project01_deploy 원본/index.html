@@ -15,12 +15,12 @@
   <!-- ★ Open Graph -->
   <meta
     property="og:image"
-    content="//ecimg.cafe24img.com/pg1108b02905422012/yerixxz/Chef/membership_premium.png"
+    content="//ecimg.cafe24img.com/pg1108b02905422012/yerixxz/portfolio2024/main.png"
   />
   <meta property="og:image:width" content="390" />
   <meta property="og:image:heigt" content="200" />
 
-  <meta property="og:title" content="[portfolio.yerim-2024ver]" />
+  <meta property="og:title" content="portfolio.yerim" />
   <meta
     property="og:description"
     content="portfolio front-end developer.yerim"
@@ -30,7 +30,7 @@
       <!-- main -->
       <article id="main">
         <span class="main_logo">
-          <img src="./img/yerim.png" alt="Logo" />
+          <img src="./img/yerim.png" alt="Logo" id="dark" />
         </span>
         <span class="main_center_text_box">
           <span class="main_text_typing"></span>
@@ -48,7 +48,7 @@
           <span class="main_text_bottom_right"> 1998 </span>
         </span>
       </article>
-      <!-- navigation -->
+      <!-- navigation & dark mode -->
       <nav id="navigation">
         <ul class="nav_gnb_desktop">
           <li>
@@ -58,7 +58,7 @@
             <a href="#skills">SKILLS </a>
           </li>
           <li>
-            <a href="#favorite">LIKE</a>
+            <a href="#like">LIKE</a>
           </li>
           <li>
             <a href="#contact">CONTACT</a>
@@ -75,7 +75,7 @@
             <a href="#skills">SKILLS</a>
           </li>
           <li>
-            <a href="#favorite">LIKE</a>
+            <a href="#like">LIKE</a>
           </li>
           <li>
             <a href="#contact">CONTACT</a>
@@ -83,13 +83,15 @@
         </ul>
         <!-- mobile logo & trigger -->
         <span class="mobile_logo">
-          <img src="./img/yerim.png" alt="yerim" />
+          <button>
+            <img src="./img/yerim.png" alt="Logo" id="dark" />
+          </button>
         </span>
+
         <span class="mobile_dia_trigger">
           <img src="./img/dia_bk.png" alt="diamond" />
         </span>
       </nav>
-
       <!-- profile & skills -->
       <article id="profile">
         <span class="profile_text">
@@ -226,92 +228,139 @@
           </p>
         </span>
       </article>
-      <!-- Favorite-->
-      <section id="favorite">
-        <span class="favorite_title"> i like it </span>
-        <span class="favorite_btn">
-          <span class="favorite_btn_blue">
-            <button class="hiking_btn" data-link="Hiking"></button>
-            <!-- modal-->
-            <article class="hiking_modal">
-              <h2>Hiking</h2>
-              <p>🏔️ 등산을 좋아해요 블랙야크 100대 명산 도전중...🏔️</p>
-              <span class="hiking_img"></span>
-            </article>
+      <!-- like-->
+      <section id="like">
+        <div class="like_container">
+          <div class="like_title">
+            i could spend <br />
+            my life in this <br />sweet surrender
+            <div class="like_arrow">
+              <button>
+                <i class="fa-solid fa-arrow-right"></i>
+                <p>next view</p>
+              </button>
+            </div>
+          </div>
 
-            <button class="climbing_btn" data-link="Climbing"></button>
-            <!-- modal-->
-            <article class="climbing_modal">
-              <h2>Climbing</h2>
-              <p>🔵 클라이밍 (6/10) 단계 진행중.. 🔵</p>
-              <span class="climbing_img"></span>
-            </article>
+          <ul class="like_contents">
+            <li class="like_content">
+              <div class="like_desc">
+                <i class="fas fa-circle-dot"></i>
+                <span class="like_img">
+                  <img src="./img/hiking.jpg" alt="hiking" />
+                </span>
+              </div>
+              <div class="like_text">
+                <h1>hiking</h1>
+                <p>
+                  등산 하는걸 좋아해요 북한산 백운대,<br />
+                  청계산, 관악산 등등 가봤어요 <br />
+                  겨울에 한라산도 도전해보고싶어요
+                </p>
+              </div>
+            </li>
+            <li class="like_content">
+              <div class="like_desc">
+                <i class="fas fa-circle-dot"></i>
+                <span class="like_img">
+                  <img src="./img/running.png" alt="running" />
+                </span>
+              </div>
+              <div class="like_text">
+                <h1>running</h1>
+                <p>
+                  꾸준히 러닝하면서 스트레스를 해소해요, <br />
+                  최근 마라톤을 나가기 시작했어요 <br />
+                  다음 목표는 10km 예요
+                </p>
+              </div>
+            </li>
+            <li class="like_content">
+              <div class="like_desc">
+                <i class="fas fa-circle-dot"></i>
+                <span class="like_img">
+                  <img src="./img/swmming.jpg" alt="swmming" />
+                </span>
+              </div>
+              <div class="like_text">
+                <h1>swmming</h1>
+                <p>
+                  아직은 수린이지만<br />
+                  주 3회 새벽 수영하고 출근할만큼, <br />
+                  물을 좋아해요
+                </p>
+              </div>
+            </li>
 
-            <button class="swimming_btn" data-link="Swimming"></button>
-
-            <!-- modal-->
-            <article class="swimming_modal">
-              <h2>swimming</h2>
-              <p>🏊🏻‍♀️주 3회 새벽 수영..물을 좋아해요🏊🏻‍♂️</p>
-              <span class="swimming_img"></span>
-            </article>
-          </span>
-          <span class="favorite_btn_yellow">
-            <button class="house_btn" data-link="House"></button>
-            <article class="house_modal">
-              <h2>House</h2>
-              <span class="house_img">
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/TwNhxKtqySs?si=rdZzDfgDpMp7cM6y&amp;controls=0&amp;start=36"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
-              </span>
-            </article>
-            <button class="band_btn" data-link="band"></button>
-            <article class="band_modal">
-              <h2>Band</h2>
-              <span class="band_img">
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/dg_a3J8sBfg?si=t5jacRTJ2W0EpvpO&amp;controls=0&amp;start=33"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
-              </span>
-            </article>
-            <button class="lofi_btn" data-link="Lo-Fi"></button>
-            <!-- modal-->
-            <article class="lofi_modal">
-              <h2>LO-FI</h2>
-              <span class="lofi_img">
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/UliRWJE0CaI?si=XdNvcKrdO0nx7DTc&amp;controls=0&amp;start=43"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
-              </span>
-            </article>
-          </span>
-
-          <span id="favorite_diamond">
-            <img src="./img/fav_diamond.png" alt="diamond" />
-          </span>
-        </span>
+            <li class="like_content">
+              <div class="like_desc_video">
+                <i class="fas fa-circle-dot"></i>
+                <h1>house</h1>
+                <p>
+                  House Mix를 정말 좋아해요 <br />
+                  Dj 음악 들으러 어디든 찾아가요!
+                </p>
+                <span class="video">
+                  <iframe
+                    width="440"
+                    height="250"
+                    src="https://www.youtube.com/embed/TwNhxKtqySs?si=rdZzDfgDpMp7cM6y&amp;controls=0&amp;start=36"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </span>
+              </div>
+            </li>
+            <li class="like_content">
+              <div class="like_desc_video">
+                <i class="fas fa-circle-dot"></i>
+                <h1>band</h1>
+                <p>
+                  밴드 음악을 좋아해요 <br />
+                  지소쿠리클럽의 팬이에요<br />
+                </p>
+                <span class="video">
+                  <iframe
+                    width="440"
+                    height="250"
+                    src="https://www.youtube.com/embed/dg_a3J8sBfg?si=t5jacRTJ2W0EpvpO&amp;controls=0&amp;start=33"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </span>
+              </div>
+            </li>
+            <li class="like_content">
+              <div class="like_desc_video">
+                <i class="fas fa-circle-dot"></i>
+                <h1>lo-fi</h1>
+                <p>
+                  집중하고 싶을 땐 Lo-Fi 음악을 들어요 <br />
+                  2-3시간은 훌쩍 지나가는거같아요
+                </p>
+                <span class="video">
+                  <iframe
+                    width="440"
+                    height="250
+                    "
+                    src="https://www.youtube.com/embed/UliRWJE0CaI?si=XdNvcKrdO0nx7DTc&amp;controls=0&amp;start=43"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
       </section>
       <!-- contact -->
       <article id="contact">
