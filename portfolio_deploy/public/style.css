@@ -911,7 +911,6 @@ input::placeholder {
     height: calc(100vh - 100px);
     border: none;
     display: flex;
-
     .content_text {
       font-size: 1.2rem;
       text-align: center;

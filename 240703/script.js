@@ -23,7 +23,7 @@ window.addEventListener("scroll", function () {
   const navMoGnb = nav.querySelector(".nav_gnb_mobile");
   const mobileLogo = nav.querySelector(".mobile_logo");
 
-  if (scrollTop >= 4000) {
+  if (scrollTop >= 4000) { 
     nav.style.backgroundColor = "#ffee96";
     navDeskGnb.style.backgroundColor = "#ffee96";
     mobileLogo.style.backgroundColor = "#ffee96";
